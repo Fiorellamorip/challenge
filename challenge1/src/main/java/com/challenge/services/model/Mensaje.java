@@ -23,7 +23,7 @@ public class Mensaje {
 
 	public	Mensaje(String cifrado) throws IncorrectFormatException  {
 		setId(cifrado);
-		desencriptar(cifrado);
+		desencriptar();
 	}
 
 	public String getId() {
@@ -60,8 +60,8 @@ public class Mensaje {
 
 
 
-	public void desencriptar(String msg) throws IncorrectFormatException {
-		Cifrado cif=new Cifrado(msg);
+	public void desencriptar() throws IncorrectFormatException {
+		Cifrado cif=new Cifrado(id);
 		galaxy=cif.desencriptarGalaxy();
 		quadrant=cif.desencriptarQuadrant();
 		starSystem=cif.desencriptarStarSystem();
