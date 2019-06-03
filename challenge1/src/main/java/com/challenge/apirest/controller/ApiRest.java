@@ -41,12 +41,12 @@ public class ApiRest {
 
 	@ApiOperation(value = "Get a String of decrypted message")
 	@GetMapping(path="/messages/{id}",produces = "application/json") 
-	public ResponseEntity<Mensaje> getMsgById(  @ApiParam(value = "encrypted message will be received in hexadecimal format. Example: 6f9c15fa-ef51-4415-afab-36218d76c2df ", required = true) @PathVariable(value = "id") String cifrado)
+	public ResponseEntity<Mensaje> getMsgById(  @ApiParam(value = "encrypted message will be received in hexadecimal format. Example: 6f9c15fa-ef51-4415-afab-36218d76c2df ", required = true) @PathVariable(value = "id") String id)
 			throws ResourceNotFoundException {
 		/*Mensaje employee = msgRepository.findById(employeeId)*/
 
 		try{
-			Mensaje msg2=new Mensaje(cifrado);//.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + ));
+			Mensaje msg2=new Mensaje(id);//.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + ));
 			return ResponseEntity.ok().body(msg2);
 		}
 		catch(Exception e) {throw new ResourceNotFoundException(e.getMessage());}

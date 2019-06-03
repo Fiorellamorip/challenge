@@ -14,25 +14,24 @@ import com.challenge.services.exceptions.ResourceNotFoundException;
  *
  */
 public class Mensaje {
-	//String msg;
+	String id;
 	String galaxy;
 	String quadrant;
 	String starSystem;
 	String planet;
-	String cifrado;
 
 
 	public	Mensaje(String cifrado) throws IncorrectFormatException  {
-		this.cifrado=cifrado;
+		setId(cifrado);
 		desencriptar(cifrado);
 	}
 
-	/*public String getMsg() {
-		return msg;
+	public String getId() {
+		return id;
 	}
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}*/
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public void setGalaxy(String galaxy) {
 		this.galaxy = galaxy;
