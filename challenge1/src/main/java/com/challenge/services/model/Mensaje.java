@@ -66,6 +66,5 @@ public class Mensaje {
 		quadrant=cif.desencriptarQuadrant();
 		starSystem=cif.desencriptarStarSystem();
 		planet=cif.desencriptarPlanet();
-		//this.setMsg(galaxy+"-"+quadrant+"-"+starSystem+"-"+planet);
 	}
 }
